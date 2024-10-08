@@ -1,60 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
-    <title>Form</title>
-        <!-- Latest compiled and minified CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Latest compiled JavaScript -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-<body class="bg-dark">
-    <ul class="nav container-fluid bg-white"> 
-        <li class="nav-item">
-            <a class="nav-link" href="./principal">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./ver_jogos">Loja</a>
-        </li>
-        <li class="nav-item">
-          <p class="nav-link disabled">Cadastrar<p>
-        </li>
-        <li id="logo">
-            <div id="foto-logo"></div>
-        </li>
-    </ul>
-    <form action="registra">
-        <div class="container-sm-2 m-5">
-            <div class="container-sm card">
-                <div class="card-header">
-                    <h1>Formulário de Inscrição</h1>
-                </div>
-                <div class="card-body">
-                    <p>
-                        <label for="nome" class="container-fluid text-dark">Nome:</label>
-                        <input type="text" id="nome" name="nome">
-                    </p>
-                    <p>
-                        <label for="valor" class="container-fluid text-dark">Valor:</label>
-                        <input type="integer" id="valor" name="valor">
-                    </p>
-                    <p>
-                        <label for="tag" class="container-fluid text-dark">Tag:</label>
-                        <input type="integer" id="tag" name="tag">
-                    </p>
-                    <p>
-                        <label for="idade_minima" class="container-fluid text-dark"> Idade Mínima:</label>
-                        <input type="text" id="idade_minima" name="idade_minima">
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <input type="submit" value="Enviar">
-                </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form</title>
+        <style>
+            *{
+            --form-secondary-color:rgb(0, 131, 81);
+            }
+            body{
+                background-color: rgb(0, 27, 14);
+                font-family: 'Courier New', Courier, monospace;
+            }
+            nav{
+                width:100%;
+                display: flex;
+                background-color: var(--form-secondary-color);
+                height: 5vh;
+                justify-content: space-evenly;
+                align-items: center;
+                text-transform: uppercase;
+            }
+            nav > disable{
+                color:white;
+                font-size: 1.5rem;
+            }
+            nav > disable:hover{
+                cursor: default;
+            }
+            nav > a{
+                overflow: none;
+                font-size: 1.5rem;
+                text-decoration: none;
+            }
+            nav>a{
+                cursor: pointer;
+            }
+            #cadastro{
+                text-transform: uppercase;
+                font-size: 3rem;
+                width: max-content;
+                margin-left: auto;
+                margin-right: auto;
+                color: white;
+                padding: 5%;
+                text-align:left;
+                background-color: var(--form-secondary-color);
+                margin-top: 10px;
+                border-radius: 32px 24px 32px 24px;
+            }
+            p > input{
+                width: 100%;
+                height: 40px;
+                border-radius: 24px 32px 24px 32px;
+                padding: 10px;
+                font-size: 3rem;
+            }
+            #cadastro>input{
+                width: max-content;
+                height: 40px;
+                border-radius: 24px 32px 24px 32px;
+                font-size: 2rem;
+                padding-left: 25px;
+                padding-right: 25px;
+                text-transform: uppercase;
+            }
+            #reset{
+                float: right;
+            }
+            #submit{
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="principal.html">Home</a>
+            <disable>Cadastrar</disable>
+            <a href="ver_jogos">Loja</a>
+        </nav>
+        <form action="registra">
+            <div id="cadastro">
+                <p>
+                    <label for="nome">Nome:</label><br>
+                    <input type="text" id="nome" name="nome">
+                </p>
+                <p>
+                    <label for="valor">Valor:</label><br>
+                    <input type="number" id="valor" name="valor">
+                </p>
+                <p>
+                    <label for="tag">Tag:</label><br>
+                    <input type="text" id="tag" name="tag">
+                </p>
+                <p>
+                    <label for="idade_minima">Idade Mínima:</label><br>
+                    <input type="number" id="idade_minima" name="idade_minima">
+                </p>
+                <input type="submit" id="submit">
+                <input type="reset" id="reset">
             </div>
-        </div>
-    </form>
-</body>
+        </form>
+    </body>
 </html>
