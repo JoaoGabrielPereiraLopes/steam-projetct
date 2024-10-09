@@ -3,6 +3,18 @@ var fs = require('fs');
 var url = require('url');
 const sqlite3 = require('sqlite3').verbose();
 
+function serveFile(res, filePath, contentType) {
+  fs.readFile(filePath, (err, content) => {
+      if (err) {
+          res.writeHead(500, { 'Content-Type': 'text/plain' });
+          res.end('Erro ao carregar o arquivo.');
+      } else {
+          res.writeHead(200, { 'Content-Type': contentType });
+          res.end(content, 'utf-8');
+      }
+  });
+}
+
 http.createServer(function (req, res) {
     var q = url.parse(req.url, true);
     var nomearquivo = "../htmls" + q.pathname;
@@ -113,6 +125,11 @@ http.createServer(function (req, res) {
           return console.error(err.message);
         }
         console.log('Fechou a conexão com o banco de dados!');
+      });
+    }
+    else if (nomearquivo === '../htmls/steam_verde_binaria.jpeg') {
+      serveFile(res, nomearquivo, 'image/jpeg', function (err,data){
+        return data
       });
     }
 
