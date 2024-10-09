@@ -14,36 +14,32 @@ function serveFile(res, filePath, contentType) {
       }
   });
 }
-
-http.createServer(function (req, res) {
-    var q = url.parse(req.url, true);
-    var nomearquivo = "../htmls" + q.pathname;
-    if(nomearquivo == "../htmls/"){
-      fs.readFile(`../htmls/principal.html`, function (err, data) {
-        if(err){
-            console.log(err)
-            res.writeHead(404, {'Content-Type': 'text/html'});
-            return res.end("404 Arquivo não encontrado!");
-        }
-        
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        res.write(data);
-        return res.end();
-      });
+function retorno_imagem(res,nomearquivo){
+  serveFile(res,`../logo/${nomearquivo}`,'image/jpeg',function (err, data){
+    return data
+  });
+}
+function css(res,nomearquivo){
+  serveFile(res,`../htmls/${nomearquivo}`,'text/css',function (err, data){
+    if(err){
+      console.log(err)
     }
-    else if(nomearquivo == "../htmls/principal.html" || nomearquivo == "../htmls/cadastrar_jogo.html"){
-      fs.readFile(nomearquivo, function(err, data) {
-        if(err){
-            res.writeHead(404, {'Content-Type': 'text/html'});
-            return res.end("404 Arquivo não encontrado!");
-        }
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        res.write(data);
-        return res.end();
-      });
+    return data
+  });
+}
+function geral(nomearquivo='../htmls/principal.html'){
+  fs.readFile(nomearquivo, function(err, data) {
+    if(err){
+        res.writeHead(404, {'Content-Type': 'text/html'});
+        return res.end("404 Arquivo não encontrado!");
     }
-    else if(nomearquivo == "../htmls/registra"){
-      let nome = q.query.nome; // Certifique-se de que o nome está sendo enviado pelo formulário
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    return res.end();
+  });
+}
+function abre_jogo(){
+  let nome = q.query.nome; // Certifique-se de que o nome está sendo enviado pelo formulário
       let valor = q.query.valor;
       let tag = q.query.tag;
       let idade_minima=q.query.idade_minima
@@ -54,6 +50,17 @@ http.createServer(function (req, res) {
         }
         console.log('Conectou com o banco de dados!');
       });
+      return db
+}
+function fechadb(db=abre_jogo()){
+  db.close((err) => {
+    if (err) {
+      return console.error(err.message);
+    }
+    console.log('Fechou a conexão com o banco de dados!');
+  });
+}
+function registrador_jogo(db=abre_jogo()){}
 
       // insere um registro no banco de dados
       db.run(`INSERT INTO jogo(Nome, Valor, Tag, idade_minima) VALUES(?,?,?,?)`, [nome, valor, tag, idade_minima], function(err) {
@@ -72,15 +79,19 @@ http.createServer(function (req, res) {
           res.write(data);
           return res.end();
         });
-
-        db.close((err) => {
-          if (err) {
-            return console.error(err.message);
-          }
-          console.log('Fechou a conexão com o banco de dados!');
-        });
-      });
-
+        fechadb()
+});
+http.createServer(function (req, res) {
+    var q = url.parse(req.url, true);
+    var nomearquivo = "../htmls" + q.pathname;
+    if(nomearquivo == "../htmls/"){
+      geral()
+    }
+    else if(nomearquivo == "../htmls/principal.html" || nomearquivo == "../htmls/cadastrar_jogo.html"){
+      geral(nomearquivo)
+    }
+    else if(nomearquivo == "../htmls/registra"){
+      
     }
     else if(nomearquivo == "../htmls/ver_jogos"){
       res.writeHead(200, {'Content-Type': 'text/html'});
@@ -127,10 +138,11 @@ http.createServer(function (req, res) {
         console.log('Fechou a conexão com o banco de dados!');
       });
     }
-    else if (nomearquivo === '../htmls/steam_verde_binaria.jpeg') {
-      serveFile(res, nomearquivo, 'image/jpeg', function (err,data){
-        return data
-      });
+    else if (nomearquivo.endsWith('.jpeg')) {
+      retorno_imagem(res,q.pathname)
+    }
+    else if (nomearquivo.endsWith('.css')) {
+      css(res,q.pathname)
     }
 
 }).listen(8080, () => {

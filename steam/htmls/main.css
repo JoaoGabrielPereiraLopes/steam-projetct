@@ -1,34 +1,23 @@
 *{
     --form-secondary-color:rgb(0, 131, 81);
 }
-
-#logo{
-    margin-left: auto;
-}
-#foto-logo{
-    background-image: url(./steam_verde_binaria.png);
-    border-radius: 100%;
-    content: '';
-    width: 50px;
-    height: 50px;
-    background-size: cover;
-}
 body{
     background-color: rgb(0, 27, 14);
     font-family: 'Courier New', Courier, monospace;
 }
 nav{
     width:100%;
-
     display: flex;
     background-color: var(--form-secondary-color);
-    height: 5vh;
-    justify-content: space-evenly;
+    height: min-content;
     align-items: center;
+    text-transform: uppercase;
 }
 nav > disable{
-    color:black;
+    color:white;
     font-size: 1.5rem;
+    margin-right: 30px;
+    margin-left: 30px;
 }
 nav > disable:hover{
     cursor: default;
@@ -36,12 +25,15 @@ nav > disable:hover{
 nav > a{
     overflow: none;
     font-size: 1.5rem;
-    color: blue;
+    text-decoration: none;
+    margin-right: 30px;
+    margin-left: 30px;
 }
 nav>a{
     cursor: pointer;
 }
 #cadastro{
+    text-transform: uppercase;
     font-size: 3rem;
     width: max-content;
     margin-left: auto;
@@ -65,4 +57,25 @@ p > input{
     height: 40px;
     border-radius: 24px 32px 24px 32px;
     font-size: 2rem;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-transform: uppercase;
+}
+#reset{
+    float: right;
+}
+#submit{
+    float: left;
+}
+.img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    content: '';
+}
+#logoprincipal{
+    background-image: url(steam_verde_binaria.jpeg);
+    background-size: cover;
+    margin-left: auto;
+    margin-right: 20px;
 }

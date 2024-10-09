@@ -5,46 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Index</title>
         <link rel="shortcut icon" href="steam_verde_binaria.jpeg" type="image/x-icon">
-        <style>
-            *{
-                --form-secondary-color:rgb(0, 131, 81);
-            }
-            body{
-                background-color: rgb(0, 27, 14);
-                font-family: 'Courier New', Courier, monospace;
-            }
-            nav{
-                width:100%;
-                text-transform: uppercase;
-                display: flex;
-                background-color: var(--form-secondary-color);
-                height: 5vh;
-                justify-content: space-evenly;
-                align-items: center;
-                height: min-content;
-            }
-            nav > disable{
-                color:black;
-                font-size: 1.5rem;
-            }
-            nav > disable:hover{
-                cursor: default;
-            }
-            nav > a{
-                text-decoration: none;
-                overflow: none;
-                font-size: 1.5rem;
-                color: blue;
-            }
-            nav>a{
-                cursor: pointer;
-            }
-            img{
-                float: left;
-                max-width: 80px;
-                max-height: 80px;
-            }
-        </style>
+        <link rel="stylesheet" href="main.css">
         
     </head>
     <body>
@@ -53,7 +14,8 @@
             <disable>Principal</disable>
             <a href="./cadastrar_jogo.html">Cadastrar</a>
             <a href="./ver_jogos">Loja</a>
-            <img src="steam_verde_binaria.jpeg" alt="">
+            <div class="img" id="logoprincipal">
+            </div>
         </nav>
 
     </body>
