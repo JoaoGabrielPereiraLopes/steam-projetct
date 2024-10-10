@@ -45,21 +45,28 @@ nav>a{
     margin-top: 10px;
     border-radius: 32px 24px 32px 24px;
 }
-p > input{
-    width: 100%;
-    height: 40px;
-    border-radius: 24px 32px 24px 32px;
-    padding: 10px;
-    font-size: 3rem;
-}
-#cadastro>input{
-    width: max-content;
+.textos{
+    width: 1000px;
     height: 40px;
     border-radius: 24px 32px 24px 32px;
     font-size: 2rem;
     padding-left: 25px;
     padding-right: 25px;
     text-transform: uppercase;
+}
+.submit{
+    width: 500px;
+    height: 40px;
+    border-radius: 24px 32px 24px 32px;
+    font-size: 2rem;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-transform: uppercase;
+}
+img{
+    width: 40px;
+    height: 40px;
+    background-size: cover;
 }
 #reset{
     float: right;
@@ -78,4 +85,11 @@ p > input{
     background-size: cover;
     margin-left: auto;
     margin-right: 20px;
+}
+.Idade{
+    width: 40px;
+    height: 40px;
+}
+#opcao1{
+    background-image: url(classificacao-livre-logo.jpeg);
 }

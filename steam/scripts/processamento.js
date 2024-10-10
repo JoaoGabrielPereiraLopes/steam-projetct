@@ -1,4 +1,5 @@
 var fs = require('fs');
+
 function serveFile(res, filePath, contentType) {
     fs.readFile(filePath, (err, content) => {
         if (err) {
@@ -36,7 +37,8 @@ function retorno_imagem(res,nomearquivo){
       return data
     });
   }
-module.exports = {
+
+  module.exports = {
     geral: geral,
     retorno_imagem: retorno_imagem,
     css: css
