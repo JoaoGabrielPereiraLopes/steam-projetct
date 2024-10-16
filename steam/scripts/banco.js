@@ -87,7 +87,6 @@ function fechamento_conteudo(res){
     res.write("</div>");  // Fechando "col-sm-8"
     res.write("</div>");  // Fechando "row"
     res.write("</div>");  // Fechando "container-fluid"
-    res.write("<p><a href='/'>Voltar</a></p>");
     res.write("</body></html>");
 }
 function pega_jogo(res) {
