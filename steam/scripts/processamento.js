@@ -37,9 +37,18 @@ function retorno_imagem(res,nomearquivo){
       return data
     });
   }
-
+  function JS(res, nomearquivo) {
+    serveFile(res, `../htmls/${nomearquivo}`, 'text/javascript', function(err, data) {
+      if (err) {
+        console.log(err);
+      }
+      return data;
+    });
+  }
+  
   module.exports = {
     geral: geral,
     retorno_imagem: retorno_imagem,
-    css: css
+    css: css,
+    JS:JS
 };

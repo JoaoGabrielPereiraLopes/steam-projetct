@@ -1,13 +1,15 @@
 -- SQLite
 CREATE TABLE genero(
- Id INTEGER PRIMARY KEY,
-  Nome TEXT NOT NULL);
+    Id INTEGER PRIMARY KEY,
+    Descricao TEXT NOT NULL,
+    Nome TEXT NOT NULL);
 CREATE TABLE jogo(
     Id INTEGER PRIMARY KEY,
     Valor INTEGER,
     Nome TEXT,
     Tag INTEGER,
     idade_minima TEXT,
+    Descricao TEXT,
     FOREIGN KEY (Tag) REFERENCES tag(Id));
 CREATE TABLE jogo_biblioteca (
     JOGO INTEGER,

@@ -25,6 +25,9 @@ http.createServer(function (req, res) {
     else if (nomearquivo.endsWith('.css')) {
       processamento.css(res,q.pathname)
     }
+    else if (nomearquivo.endsWith('.js')) {
+      processamento.JS(res,q.pathname)
+    }
 }).listen(8080, () => {
     console.log("O servidor foi iniciado na porta 8080");
 });
