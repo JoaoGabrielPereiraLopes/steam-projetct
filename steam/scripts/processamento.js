@@ -45,7 +45,22 @@ function retorno_imagem(res,nomearquivo){
       return data;
     });
   }
-  
+  function woff(res,nomearquivo){
+    serveFile(res,`../htmls/${nomearquivo}`,'text/woff2',function (err, data){
+      if(err){
+        console.log(err)
+      }
+      return data
+    });
+  }
+  function ttf(res,nomearquivo){
+    serveFile(res,`../htmls/${nomearquivo}`,'text/ttf',function (err, data){
+      if(err){
+        console.log(err)
+      }
+      return data
+    });
+  }
   module.exports = {
     geral: geral,
     retorno_imagem: retorno_imagem,
