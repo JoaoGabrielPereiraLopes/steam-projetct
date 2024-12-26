@@ -1,0 +1,302 @@
+:root{
+  --main-bg-color: 000 270 140;
+  --secondary-bg-color: 000 131 810; 
+  --primary-rgb: rgb(17, 29, 24);
+  --secondary-rgb: rgb(0, 131, 81);
+  --dark-bg: 41, 43, 44;
+  --dark-rgb: rgb(41, 43, 44);
+
+/* #171a21	RGB(23, 26, 33)	black	—
+   #66c0f4	RGB(102, 192, 244) light	—
+   #1b2838	RGB(27, 40, 56)	darker	—
+   #2a475e	RGB(42, 71, 94)	medium	—
+   #c7d5e0	RGB(199, 213, 224 grey 
+   
+    
+   */
+}
+
+
+
+*{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2.5vh;
+}
+a{
+  text-decoration:none;
+  color: #ffffff;
+}
+body{
+    background-color: var(--primary-rgb);
+    font-family: 'Courier New', Courier, monospace;
+}
+nav{
+    width:100%;
+    display: flex;
+    background-color: var(--dark-rgb);
+    height: min-content;
+    text-transform: uppercase;
+    border-bottom: #f8f6f6 solid 0.1vh;
+}
+nav > disable{
+    color:white;
+    font-size: 1.5rem;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+nav > disable:hover{
+    cursor: default;
+}
+nav > a{
+    overflow: none;
+    font-size: 1.5rem;
+    text-decoration: none;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+nav>a :hover{
+    cursor: pointer;
+}
+.busca{
+  padding: 1vh;
+}
+.procura{
+  margin-right: 1vh;
+}
+.confirma-procura{
+  background-color: var(--primary-rgb);
+  border-radius: 1vh;
+  border-color: var(--primary-rgb);
+}
+
+
+.offcanvas-header{
+  background-color:rgb(var(--secondary-bg-color)/75%);
+  font-family: sans-serif;
+  font-size: 3em;
+  color: rgb(var(--primary-rgb) /85%);
+  font-style: normal;
+  
+}
+#offcanvas-body {
+  background-color:rgb(var(--secondary-rgb)/75%);
+}
+#cadastro{
+    text-transform: uppercase;
+    font-size: 3rem;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    padding: 3% 5%;
+    text-align:left;
+    margin: 10px auto;
+    border-radius: 32px 24px 32px 24px;
+
+}
+.textos{
+    width: 1000px;
+    height: 40px;
+    border-radius: 24px 32px 24px 32px;
+    font-size: 2rem;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-transform: uppercase;
+}
+.submit{
+    width: 500px;
+    height: 40px;
+    border-radius: 24px 32px 24px 32px;
+    font-size: 2rem;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-transform: uppercase;
+}
+img{
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+}
+#bigLogo {
+    width:50vh;
+    height: 50vh;
+}
+#reset{
+    float: center;
+    font-size: 2.5vh;
+  }
+
+#submit{
+    float: center;
+    font-size: 2.5vh;
+}
+.img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    content: '';
+}
+#a{
+   margin-left: 35%;
+   font-size: 3vh;
+}
+#ab{
+  margin-left: 55%;
+  font-size: 3vh;
+}
+#logoprincipal{
+  background-image: url(assets/Captura-de-Tela-_167_.jpeg);
+  background-size: cover;
+  margin-left: 1%;
+  margin-right: 20px;
+}
+.Idade{
+    width: 40px;
+    height: 40px;
+}
+#opcao1{
+    background-image: url(classificacao-livre-logo.jpeg);
+}
+.buttonParaComprarJogo{
+ width: 100%;
+ height: 100%;
+ display: flex;
+ background-color: rgb(48, 48, 48);
+ padding: 3vh ;
+ justify-content: center;
+ align-items: center;
+ border-radius: 5%;
+}
+
+.valorDoJogo{
+    margin: auto 3vh;
+    font-size: 3vh;
+    font-weight: bold;
+    color: #f8f6f6;
+}
+.classification{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#titleForm {
+  font-size: 6vh;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  width: fit-content;
+}
+label, input{
+  color: #000;
+}
+label{
+  font-size: 3.7vh;
+  color: #ffffff;
+}
+.tile{
+  width: 13.55em;
+  border: 3px solid rgb(var(--main-bg-color) /45%);
+  aspect-ratio: 10/16;
+  border-radius: 1rem;
+  color: rgb(255, 251, 251);
+  background-size: 9px;
+  background-color: rgb(var(--main-bg-color) /5%); 
+  overflow: hidden;
+  padding: 0;
+  display: grid;
+  transition: transform 200ms;
+}
+
+
+.tile > * {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+.tile-overlay {
+  background: repeating-linear-gradient(rgb(var(--main-bg-color) /35%),
+  rgb(var(--main-bg-color) /25%)3px, transparent 3px, transparent 3px);
+  width: 100%; 
+  height: 100%;
+  z-index: 3;
+}
+
+.tile-contents{
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  font-family: "Orbitron", sans-serif;
+}
+@keyframes pan-overlay{
+    from {
+      background-position: 0% 0%;
+    }
+    to {
+      background-position: 0% -100%;
+    }
+  }
+
+.tile > .tile-image{
+
+  animation: pan-overlay 22s infinite linear;
+  object-fit: cover;
+  border-color: none;
+  z-index: 1;
+  height: 800px;
+  width: 1550px;
+  
+}
+.tile > .tile-contents, .tile > .tile-overlay, .tile-hack0{
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  justify-content: center;
+  align-items: center;
+}
+.tile:hover{
+  transform:scale(1.25);
+}
+.hack{
+  font-size: 3em;
+  color: #a2bef3;
+  background-color: #363f4e;
+  border-radius: 5%;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  margin: 2.5em 0px;
+}
+#tile-hack{
+  width: 60em;
+  justify-content: center;
+  align-items: center;
+  container-name: sidebar;
+  border: 1vh solid rgba(var(--dark-rgb)/ 25%);
+  aspect-ratio: 16/7;
+  border-radius: 1rem;
+  color: rgb(0, 0, 0);
+  background-size: 9px;
+  background-color: rgb(var(--main-bg-color) /5%); 
+  overflow: hidden;
+  padding: 0px;
+  display: grid;
+  margin: 2rem auto;
+}
+#hack0, #hack1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.6em;
+  container-name: sidebar;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  margin: 4em  1em 4em 0px;
+  padding: 0px;
+
+}
+
+@container sidebar (min-width: 700px) {
+  #hack0, #hack1 {
+    font-size: 7em;
+  }
+}
