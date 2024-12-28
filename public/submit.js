@@ -1,56 +1,73 @@
 const photo = document.getElementById("photo");
-// Selecione o formulário corretamente
 const form = document.getElementById('cadastramento');
-form.addEventListener('submit', async (e) => {
-    alert(document.getElementById('photo').value)
-    e.preventDefault(); // Evita o envio padrão e recarregamento da página
+let foto = ''; // Variável global para armazenar o Base64
 
-    // Pegue os valores do formulário
+// Evento para processar a imagem selecionada
+photo.addEventListener('change', (event) => {
+    const file = event.target.files[0]; // Pega o arquivo selecionado
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            base64 = e.target.result; // Armazena o Base64 na variável global
+            console.log('Base64 da imagem:', base64); // Verifique o Base64 no console
+        };
+        reader.readAsDataURL(file); // Converte o arquivo para Base64
+    }
+});
+
+// Evento para envio do formulário
+form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Evita o comportamento padrão do formulário
+
+    // Coletando os dados do formulário
     const radios = document.getElementsByClassName('Idade');
     const nome = document.getElementById("nome");
     const valor = document.getElementById("valor");
     const tag = document.getElementById("tag");
     const descricao = document.getElementById("descricao");
+
     let marcado = null;
     Array.from(radios).forEach(element => {
         if (element.checked) {
-            marcado = element;
+            marcado = element.value; // Pega o valor do rádio marcado
         }
     });
-    if (marcado!=null){
-        const formData = {
-            idade: marcado.value,
-            nome: nome.value,
-            valor: valor.value,
-            tag: tag.value,
-            descricao: descricao.value,
-            foto:photo.files
-        };
-        try {
-            const response = await fetch('/registra-jogo', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
-    
-            const result = await response.json();
-            const messageEl = document.getElementById('message');
-            messageEl.innerHTML = result.message;
-    
-            if (result.status !== 'failed') {
-                marcado.checked=false
-                nome.value=''
-                valor.value=''
-                tag.value=''
-                descricao.value=''
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        }
+
+    // Validação dos campos
+    if (!marcado || !nome.value || !valor.value || !tag.value || !descricao.value || !base64) {
+        document.getElementById('message').innerHTML = 'Por favor, preencha todos os campos.';
+        return;
     }
-    else{
-        document.getElementById('message').innerHTML = 'preencha todos os campos';
+
+    // Montando os dados para envio
+    const formData = {
+        idade: marcado,
+        nome: nome.value,
+        valor: valor.value,
+        tag: tag.value,
+        descricao: descricao.value,
+        foto: base64 // Base64 da imagem
+    };
+
+    try {
+        const response = await fetch('/registra-jogo', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+        const messageEl = document.getElementById('message');
+        messageEl.innerHTML = result.message;
+
+        if (result.status !== 'failed') {
+            // Limpa os campos após o envio bem-sucedido
+            form.reset();
+            foto = ''; // Reseta a variável foto
+        }
+    } catch (error) {
+        console.error('Erro ao enviar os dados:', error);
     }
 });
