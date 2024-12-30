@@ -1,0 +1,27 @@
+.Idade{
+    width: 40px;
+    height: 40px;
+}
+
+.buttonParaComprarJogo{
+ width: 100%;
+ height: 100%;
+ display: flex;
+ background-color: rgb(48, 48, 48);
+ padding: 3vh ;
+ justify-content: center;
+ align-items: center;
+ border-radius: 5%;
+}
+
+.valorDoJogo{
+    margin: auto 3vh;
+    font-size: 3vh;
+    font-weight: bold;
+    color: #f8f6f6;
+}
+.classification{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
