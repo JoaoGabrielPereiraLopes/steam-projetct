@@ -1,2 +1,2 @@
-const servidor=require('./modulos/scripts/rotas/main').default
-new servidor().iniciaservidor(8080)
+const servidor=require('./modulos/scripts/rotes/main').default
+new servidor().start(8080)
