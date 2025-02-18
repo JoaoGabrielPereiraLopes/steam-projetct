@@ -1,0 +1,27 @@
+{
+  "name": "wefood",
+  "version": "1.0.0",
+  "description": "A work about a online store to a restarunt",
+  "main": "index.js",
+  "scripts": {
+    "test": "package"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoaoGabrielPereiraLopes/Wefood.git"
+  },
+  "keywords": [
+    "dev"
+  ],
+  "author": "JoaoGabrielPereiraLopes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoaoGabrielPereiraLopes/Wefood/issues"
+  },
+  "homepage": "https://github.com/JoaoGabrielPereiraLopes/Wefood#readme",
+  "dependencies": {
+    "degit": "^2.8.4",
+    "express": "^4.21.2",
+    "sqlite3": "^5.1.7"
+  }
+}

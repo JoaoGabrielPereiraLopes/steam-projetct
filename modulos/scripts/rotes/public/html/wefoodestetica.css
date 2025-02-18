@@ -1,0 +1,535 @@
+/*Cores Do WeFood */
+
+:root {
+	--red-default: #ea1d2c;
+	--hover-red: #c2121f;
+	--dark-red: #cc1825;
+	--green-market: #b6d048;
+	--dark-green: #9eb53e;
+	--yellow: #f6d553;
+	--purple: #8c60c5;
+	--pink: #f9879c;
+	--white: #fff;
+	--dark-gray: #3e3e3e;
+	--text: #717171;
+	--title: #1a1a1a;
+	--border: #dcdcdc;
+	--bg-gray: #f7f7f7;
+}
+
+/*Links Do WeFood */
+
+.food-links {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: row;
+	margin: 120px auto 0px auto;
+}
+
+.food-link {
+	width: 40%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+.food-link article {
+	width: 50%;
+	top: -40px;
+	bottom: 0;
+	position: absolute;
+	right: -20px;
+}
+
+.food-link article > h2 {
+	font-family: "SulSans", sans-serif;
+	font-size: 2.25rem;
+	line-height: 2.75rem;
+	color: var(--title);
+	margin-bottom: 20px;
+}
+
+.food-link article > p {
+	font-size: 1rem;
+	line-height: 1.25rem;
+	color: var(--text);
+	margin-bottom: 20px;
+}
+.food-link article > a > button {
+	color: var(--white);
+	font-family: "SulSans Bold", sans-serif;
+	background-color: var(--red-default);
+	padding: 17px 33px;
+	border-radius: 5px;
+	border: none;
+}
+
+.food-link article > a > button:hover {
+	background-color: var(--hover-red);
+}
+
+.food-link-img {
+	position: absolute;
+	bottom: 25px;
+	left: 0;
+	width: 50%;
+}
+
+@media screen and (max-width: 900px) {
+	.food-links {
+		height: 800px;
+		justify-content: space-around;
+		flex-direction: column;
+	}
+	.food-link {
+		width: 90%;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
+/*Food */
+
+.food-lover {
+	display: grid;
+	grid-template-columns: 20% 10% 70%;
+	margin: 100px auto;
+}
+
+.food-lover article {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-right: 40px;
+}
+
+.food-lover article > h2 {
+	font-family: "SulSans", sans-serif;
+	font-size: 2.25rem;
+	line-height: 2.75rem;
+	color: var(--title);
+	margin-bottom: 20px;
+}
+
+.food-lover article > p {
+	font-size: 1rem;
+	line-height: 1.25rem;
+	color: var(--text);
+	margin-bottom: 20px;
+}
+.food-lover article > a > button {
+	color: var(--white);
+	font-family: "SulSans Bold", sans-serif;
+	background-color: var(--red-default);
+	padding: 17px 33px;
+	border-radius: 5px;
+	border: none;
+}
+
+.food-lover article > a > button:hover {
+	background-color: var(--hover-red);
+}
+
+.food-lover img {
+	width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+	.food-lover {
+		display: grid;
+		grid-template-columns: 100%;
+		padding: 100px 20px;
+	}
+	.food-lover img {
+		display: none;
+	}
+}
+
+.banner-ifood-card {
+	margin: 0 auto;
+}
+
+.banner-ifood-card img {
+	width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+	.banner-ifood-card {
+		display: none;
+	}
+}
+
+/*General*/
+
+.container {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+body {
+	scroll-behavior: smooth;
+}
+
+main {
+	padding-top: 80px;
+}
+
+@media screen and (max-width: 1000px) {
+	.container {
+		width: 100%;
+	}
+}
+
+.header-menu {
+	padding: 40px 32px;
+	background-color: var(--bg-gray);
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	width: 100%;
+}
+
+.header-menu nav,
+ul {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header-menu li {
+	padding: 0 20px;
+}
+
+.header-menu a {
+	text-decoration: none;
+	font-family: "SulSans", sans-serif;
+	color: var(--text);
+}
+
+.header-menu a:hover {
+	color: var(--dark-gray);
+}
+
+.header-menu ul:last-child li:first-child a {
+	color: var(--red-default);
+}
+
+.header-menu ul:last-child li:last-child a {
+	color: var(--white);
+	background-color: var(--red-default);
+	padding: 15px 30px;
+	border-radius: 5px;
+}
+
+.header-menu ul:last-child li:last-child a:hover {
+	background-color: var(--hover-red);
+}
+
+@media screen and (max-width: 900px) {
+	.header-menu > nav > ul:first-child li:not(li:first-child) {
+		display: none;
+	}
+}
+
+/*Header*/
+
+.header-menu {
+	padding: 40px 32px;
+	background-color: var(--bg-gray);
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	width: 100%;
+}
+
+.header-menu nav,
+ul {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header-menu li {
+	padding: 0 20px;
+}
+
+.header-menu a {
+	text-decoration: none;
+	font-family: "SulSans", sans-serif;
+	color: var(--text);
+}
+
+.header-menu a:hover {
+	color: var(--dark-gray);
+}
+
+.header-menu ul:last-child li:first-child a {
+	color: var(--red-default);
+}
+
+.header-menu ul:last-child li:last-child a {
+	color: var(--white);
+	background-color: var(--red-default);
+	padding: 15px 30px;
+	border-radius: 5px;
+}
+
+.header-menu ul:last-child li:last-child a:hover {
+	background-color: var(--hover-red);
+}
+
+@media screen and (max-width: 900px) {
+	.header-menu > nav > ul:first-child li:not(li:first-child) {
+		display: none;
+	}
+}
+
+/*Opções*/
+
+.options {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+
+	text-align: center;
+}
+.container-options {
+	width: 842px;
+	margin-top: -100px;
+}
+
+.cards-options {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.card-option {
+	width: 48%;
+	height: 220px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-around;
+
+	position: relative;
+	border-radius: 15px;
+	padding-left: 15px;
+	cursor: pointer;
+	background-color: var(--red-default);
+}
+
+.card-option:not(.card-option:hover) {
+	opacity: 0.9;
+}
+
+.card-option:last-child {
+	background-color: var(--green-market);
+}
+
+.card-option h2 {
+	font-size: 2.25rem;
+	color: var(--white);
+}
+
+.card-option img {
+	resize: auto;
+	object-fit: contain;
+	width: 250px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.card-option button {
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	font-family: "SulSans Bold", sans-serif;
+	height: 36px;
+	padding: 0 12px;
+	width: 146px;
+	font-size: 1rem;
+	color: var(--white);
+	background-color: var(--dark-red);
+}
+
+.card-option:last-child button {
+	background-color: var(--dark-green);
+}
+
+@media screen and (max-width: 900px) {
+	.container-options {
+		width: 100%;
+	}
+
+	.cards-options {
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.card-option {
+		width: 95%;
+		margin-top: 20px;
+	}
+	.card-option img {
+		width: 200px;
+	}
+}
+
+.mini-cards-options {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top: 100px;
+}
+
+.mini-card {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.mini-card figure {
+	background-color: var(--yellow);
+	height: 47px;
+	border-radius: 5px;
+	width: 188px;
+	position: relative;
+	bottom: 0;
+}
+
+.mini-card:nth-child(2) figure {
+	background-color: var(--pink);
+}
+
+.mini-card:nth-child(4) figure {
+	background-color: var(--purple);
+}
+
+.mini-card img {
+	position: absolute;
+	bottom: 0;
+	right: 50%;
+	transform: translateX(50%);
+	width: 65%;
+	transition: width 2s;
+}
+
+.mini-card:hover img {
+	width: 80%;
+}
+
+.mini-card span {
+	margin-top: 10px;
+}
+
+.mini-card span::after {
+	content: ">";
+	color: var(--red-default);
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+@media screen and (max-width: 900px) {
+	.mini-cards-options {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.mini-card {
+		margin-top: 100px;
+	}
+}
+
+/*Pesquisando*/
+
+.search {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+
+	height: 500px;
+	padding-bottom: 50px;
+	background-color: var(--bg-gray);
+
+	text-align: center;
+	position: relative;
+}
+
+.search > div:nth-child(2) {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 842px;
+}
+
+.title-search h1 {
+	font-size: 2.25rem;
+	color: var(--title);
+	margin: 15px 0px;
+}
+
+.title-search p {
+	font-size: 1rem;
+	color: var(--text);
+	margin-bottom: 40px;
+}
+
+.search-input {
+	width: 90%;
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	background-color: var(--white);
+	border: var(--border);
+	padding: 0px 10px;
+	border-radius: 5px;
+}
+
+.search-input input {
+	width: 100%;
+	outline: none;
+	border: none;
+
+	padding: 16px;
+}
+
+.button-search {
+	color: var(--white);
+	font-family: "SulSans Bold", sans-serif;
+	background-color: var(--red-default);
+	padding: 17px 33px;
+	border-radius: 5px;
+	margin-left: 10px;
+	border: none;
+}
+
+.button-search:hover {
+	background-color: var(--dark-red);
+}
+
+@media screen and (max-width: 900px) {
+	.title-search {
+		width: 90%;
+		margin: 0 auto;
+	}
+	.search > div:nth-child(2) {
+		flex-direction: column;
+		width: 100%;
+	}
+	.button-search {
+		margin-left: 0px;
+		margin-top: 10px;
+	}
+}
